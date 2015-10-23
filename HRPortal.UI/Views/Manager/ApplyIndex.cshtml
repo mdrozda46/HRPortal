@@ -1,0 +1,37 @@
+﻿@model List<HRPortal.Models.Resume> 
+@{
+    ViewBag.Title = "ApplyIndex";
+}
+
+<h2>Resume List</h2>
+<body>
+<div>
+    @if (Model.Any())
+    {
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Date Applied</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var resume in Model)
+            {
+                <tr>
+                    <td>@resume.FirstName + " " + @resume.LastName</td>
+                    <td>@resume.Position</td>
+                    <td>@resume.DateOfApplication</td>
+                    <td>@Html.ActionLink("View", "ViewResume", "Manager", new {id = @resume.ID}, null )</td>
+
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+</div>
+
+</body>

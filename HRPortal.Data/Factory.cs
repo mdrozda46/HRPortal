@@ -9,7 +9,7 @@ namespace HRPortal.Data
 {
     public static class Factory
     {
-        public static IResumeRepository CreateContactRepository()
+        public static IResumeRepository CreateResumeRepository()
         {
             switch (ConfigurationManager.AppSettings["mode"].ToLower())
             {
