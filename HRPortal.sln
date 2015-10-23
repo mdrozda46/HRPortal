@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRPortal.UI", "HRPortal.UI\HRPortal.UI.csproj", "{3E4861AA-BC50-4C7B-85CE-9FDA5CE8DC41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRPortal.Data", "HRPortal.Data\HRPortal.Data.csproj", "{337AA067-4FAD-4304-8351-3623BD9756A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRPortal.Models", "HRPortal.Models\HRPortal.Models.csproj", "{DFF3B035-1CB5-4A65-8790-D9B5E080FCF8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{3E4861AA-BC50-4C7B-85CE-9FDA5CE8DC41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E4861AA-BC50-4C7B-85CE-9FDA5CE8DC41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E4861AA-BC50-4C7B-85CE-9FDA5CE8DC41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{337AA067-4FAD-4304-8351-3623BD9756A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{337AA067-4FAD-4304-8351-3623BD9756A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{337AA067-4FAD-4304-8351-3623BD9756A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{337AA067-4FAD-4304-8351-3623BD9756A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFF3B035-1CB5-4A65-8790-D9B5E080FCF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFF3B035-1CB5-4A65-8790-D9B5E080FCF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFF3B035-1CB5-4A65-8790-D9B5E080FCF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFF3B035-1CB5-4A65-8790-D9B5E080FCF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
