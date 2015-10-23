@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,11 @@ namespace HRPortal.Models
         public string Position { get; set; }
         public List<Employment> EmploymentHistory { get; set; }
         public List<Education> EducationHistory { get; set; }
-        public Decimal DesiredSalary { get; set; }
+
+        [DataType(DataType.Currency)]
+        public decimal DesiredSalary { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime DateOfApplication { get; set; }
 
     }

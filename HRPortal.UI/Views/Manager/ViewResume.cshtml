@@ -4,5 +4,89 @@
     ViewBag.Title = "ViewResume";
 }
 
-<h2>@Model.FirstName + @" " + @Model.LastName</h2>
+<h2>@Model.FirstName @Model.LastName</h2>
+
+<div>
+
+    <p>
+        @Html.Label("Email")
+        @Html.DisplayFor(m => m.Email)
+    </p>
+
+    <p>
+        @Html.Label("Phone Number")
+        @Html.DisplayFor(m => m.PhoneNumber)
+    </p>
+
+    <p>
+        @Html.Label("Date of Application")
+        @Html.DisplayFor(m => m.DateOfApplication)
+    </p>
+
+    <p>
+        @Html.Label("Desired Position")
+        @Html.DisplayFor(m => m.Position)
+    </p>
+
+    <p>
+        @Html.Label("Desired Salary")
+        @Html.DisplayFor(m => m.DesiredSalary)
+    </p>
+</div>
+
+<div>
+    <p>----------------------------------------------</p>
+    <p>
+        @Html.Label("Employment History")
+        <br/>
+        <br/>
+
+        @foreach (var p in Model.EmploymentHistory)
+        {
+
+            @Html.Label("Company Name:")
+            <br/>            
+            @p.CompanyName
+            <br/>            <br />
+
+            @Html.Label("Years of Employment:")
+            <br/>
+            @p.YearsOfEmployment.ToString()
+            <br/>            <br />
+
+            @Html.Label("Job Description:")
+            <br/>
+            @p.JobDescription
+            <br />            <br />
+
+        }
+    </p>
+</div>
+
+<div>
+    <p>------------------------------------------------------</p>
+    <p>
+        @Html.Label("Education History")
+        <br/> <br />
+        @foreach (var e in Model.EducationHistory)
+        {
+
+            @Html.Label("Name:")
+            <br/>
+            @e.Name
+            <br/>            <br />
+
+            @Html.Label("Type:")
+            <br/>            
+            @e.Type
+            <br/>            <br />
+
+            @Html.Label("Description:")
+            <br/>            
+            @e.Description
+            <br/>
+        }
+    </p>
+
+</div>
 

@@ -1,0 +1,55 @@
+﻿@using System.Web.UI.WebControls
+@model List<HRPortal.Models.Resume>
+@{
+    ViewBag.Title = "ApplyIndex";
+}
+
+<h2>Resume List</h2>
+<body>
+    <div>
+        @if (Model.Any())
+        {
+            <table class ="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Date Applied</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var resume in Model)
+                    {
+                        <tr>
+                            <td>@resume.FirstName @resume.LastName</td>
+                            <td>@resume.Position</td>
+                            <td>@resume.DateOfApplication.Date.ToShortDateString()</td>
+                            <td>@Html.ActionLink("View", "ViewResume", "Manager", new { id = @resume.ID }, new {@class="btn btn-primary"})</td>
+                            
+                            <td>@using (Html.BeginForm("DeleteResume", "Manager", FormMethod.Post))
+                        {
+                            @Html.HiddenFor(r => resume.ID)
+                            <Button class =" btn btn-primary">Delete</Button>
+                        }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+

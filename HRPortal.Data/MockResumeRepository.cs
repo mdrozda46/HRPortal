@@ -42,7 +42,7 @@ namespace HRPortal.Data
                 _resumes.AddRange(new List<Resume>()
                 {
                     new Resume {ID = 1, FirstName = "Victor", LastName = "Pudelski", Email ="vpudelski@swguild.com", PhoneNumber = "876-5309", Position = "Lead Instructor", EmploymentHistory = victorEmployment, EducationHistory = victorEducation, DesiredSalary = 90000, DateOfApplication = (DateTime.Parse("10/23/2015"))},
-                    new Resume {ID = 1, FirstName = "Randall", LastName = "Clapper", Email ="rclapper@swguild.com", PhoneNumber = "867-5309", Position = "TA", EmploymentHistory = randallEmployment, EducationHistory = randallEducation, DesiredSalary = 100000, DateOfApplication = (DateTime.Parse("10/23/2015"))}
+                    new Resume {ID = 2, FirstName = "Randall", LastName = "Clapper", Email ="rclapper@swguild.com", PhoneNumber = "867-5309", Position = "TA", EmploymentHistory = randallEmployment, EducationHistory = randallEducation, DesiredSalary = 100000, DateOfApplication = (DateTime.Parse("10/23/2015"))}
                 });
             }
         }
