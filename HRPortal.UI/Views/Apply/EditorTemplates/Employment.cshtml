@@ -1,0 +1,19 @@
+﻿@model HRPortal.Models.Employment
+
+<tr>
+
+    @Html.Label("Company Name:")
+    @Html.TextBoxFor(m => m.CompanyName)
+
+    @Html.Label("Position:")
+    @Html.TextBoxFor(m => m.Position)
+    
+
+    @Html.Label("Years of Employment:")
+    @Html.TextBoxFor(m => m.YearsOfEmployment)
+</tr>
+
+<tr>
+    @Html.Label("Job Description:")
+    @Html.TextAreaFor(m => m.JobDescription)
+</tr>

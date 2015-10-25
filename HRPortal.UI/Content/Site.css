@@ -18,13 +18,14 @@ textarea {
 
 /*align personal information divs*/
 .contactInfo {
-    padding-left: 15px;
+    border-style: solid;
+    border-width: 1px;
+    text-align: left;
+
 }
 
 .jobInfo {
-    padding-top: 50px;
-    padding-left: 500px;
-    padding-right: 15px;
+    
 }
 
 p.heading {

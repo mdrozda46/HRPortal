@@ -11,50 +11,64 @@
 
     <div class="contactInfo">
         <div>
-            
-                <p class="heading">Contact Information</p>
+
+            <p class="heading">Contact Information:</p>
+            <p></p>
         
         </div>
         <div class="ContactField">
-            <p>
+            <span class="editor-label">
                 <label>First Name:</label>
+                <span class="editor-field">
                 @Html.TextBoxFor(m => m.FirstName)
-            </p>
+                    </span>
+            </span>
         </div>
         <div class ="ContactField">
-            <p>
+            <span class="editor-label">
                 <label>Last Name:</label>
+                <span class="editor-field">
                 @Html.TextBoxFor(m => m.LastName)
-            </p>
+                    </span>
+            </span>
         </div>
         <div class="ContactField">
-            <p>
+            <span class="editor-label">
                 <label>Email:</label>
+                <span class="editor-field">
                 @Html.TextBoxFor(m => m.Email)
-            </p>
+                    </span>
+            </span>
         </div>
         <div class="contactField">
-            <p>
+            <span class="editor-label">
                 <label>Phone Number:</label>
+                <span class="editor-field">
                 @Html.TextBoxFor(m => m.PhoneNumber)
-            </p>
+                    </span>
+            </span>
         </div>
     </div>
 
 
     <div class="jobInfo">
         <p class="heading">Job Applying For:</p>
+        <p></p>
         <div class="jobField">
-            <p>
+            <span class="editor-label">
                 <label>Desired Position:</label>
+                <span class="editor-field">
                 @Html.TextBoxFor(m => m.Position)
-            </p>
+                    </span>
+            </span>
             </div>
         <div class="jobField">
-            <p>
+            <span class="editor-label">
                 <label>Desired Salary:</label>
+                <span class="editor-field">
                 @Html.TextBoxFor(m => m.DesiredSalary)
-            </p>
+                    </span>
+            </span>
             </div>
     </div>
 
@@ -62,9 +76,18 @@
         <p>----------------------------------------------------------</p>
         <p>
             @Html.Label("Employment History:")
-            <br />
-            <br />
-            <div>
+            <br /><br/>
+
+            @Html.EditorFor(m => m.EmploymentHistory[0])
+        <br/><br/>
+
+            @Html.EditorFor(m => m.EmploymentHistory[1])
+        <br/><br/>
+
+            @Html.EditorFor(m => m.EmploymentHistory[2])
+            <br/><br/>
+
+        @*<div>
                 @Html.Label("Company Name:")
                 <br />
                 @Html.TextBoxFor(m => m.EmploymentHistory[0].CompanyName)
@@ -126,49 +149,39 @@
                 <br />
                 @Html.TextAreaFor(m => m.EmploymentHistory[0].JobDescription)
                 <br /><br />
-            </div>
+            </div>*@
     </div>
     <div>
         <p>----------------------------------------------</p>
         <p>
             @Html.Label("Education History:")
-            <br />
-            <br />
-            <table>
+        <br/><br/>
+
+            @Html.EditorFor(m => m.EducationHistory[0])
+        <br/><br/>
+
+            @Html.EditorFor(m => m.EducationHistory[1])
+        <br/><br/>
+
+            @Html.EditorFor(m => m.EducationHistory[2])
+            <br/>
+        @*<table>
                 <thead>
                 </thead>
                 <tbody>
 
-                    @for (int i = 0; i < Model.EducationHistory.Count; i++)
+                    @for (int i = 0; i < 3; i++)
                     {
-                        <tr>
-
-                            @Html.Label("Name:")
-                            @Html.TextBoxFor(m => m.EducationHistory[i].Name)
-
-                            @Html.Label("Type:")
-                            @Html.TextBoxFor(m => m.EducationHistory[i].Type)
-
-                            @Html.Label("Description:")
-                            @Html.TextBoxFor(m => m.EducationHistory[i].Description)
-                        </tr>
+                       @Html.EditorFor(m => m.EducationHistory[i])
+                        
                     }
-                    <tr>
-
-                        @Html.Label("Name:")
-                        @Html.TextBoxFor(m => m.AddedEducationHistory.Name)
-
-                        @Html.Label("Type:")
-                        @Html.TextBoxFor(m => m.AddedEducationHistory.Type)
-
-                        @Html.Label("Description:")
-                        @Html.TextBoxFor(m => m.AddedEducationHistory.Description)
-                    </tr>
+                  
+                    @Html.EditorFor(m => m.AddedEducationHistory)
 
                 </tbody>
-            </table>
+            </table>*@
     </div>
 
-    <button class="btn btn-primary">Submit</button>
+    <button class="btn btn-primary">Submit Application</button>
 }
 

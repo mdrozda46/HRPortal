@@ -1,0 +1,16 @@
+﻿@model HRPortal.Models.Education
+
+
+<tr>
+
+    @Html.Label("Name:")
+    @Html.TextBoxFor(m => m.Name)
+
+    @Html.Label("Program Type:")
+    @Html.TextBoxFor(m => m.Type)
+</tr>
+
+<tr>
+    @Html.Label("Program Description:")
+    @Html.TextAreaFor(m => m.Description)
+</tr>
