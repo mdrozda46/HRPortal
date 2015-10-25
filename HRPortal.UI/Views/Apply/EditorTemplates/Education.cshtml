@@ -1,7 +1,7 @@
 ﻿@model HRPortal.Models.Education
 
 
-<tr>
+@*<tr>
 
     @Html.Label("Name:")
     @Html.TextBoxFor(m => m.Name)
@@ -13,4 +13,27 @@
 <tr>
     @Html.Label("Program Description:")
     @Html.TextAreaFor(m => m.Description)
-</tr>
+</tr>*@
+
+
+<div class="education">
+    <div class="tableRow">
+        <p class="heading">
+            @Html.Label("Name:")
+        </p>
+        <p class="field">
+            @Html.TextBoxFor(m => m.Name, new { @class = "longTextBox" })
+        </p>
+    </div>
+
+    <div class="Education">
+        <div class="tableRow">
+            <p></p>
+            <p class="label">@Html.Label("Program Type:")</p>
+            <p class="field">@Html.TextBoxFor(m => m.Type, new { @class = "longTextBox" })</p>
+           <p class="label">@Html.Label("Program Description:")</p>
+            <p>@Html.TextAreaFor(m => m.Description, 3, 120, null)</p>
+
+        </div>
+    </div>
+</div>

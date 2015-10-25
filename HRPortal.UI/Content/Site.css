@@ -34,8 +34,8 @@ textarea {
     padding-top: 15px;
     padding-bottom: 15px;
     text-align: left;
-
 }
+
 div.tableRow {
     display: table-row;
 
@@ -60,6 +60,34 @@ div.tableRow p {
     text-align: left;
 }
 
+.employmentHistory {
+    display: table;
+    border-width: 1px;
+    padding-left: 15px;
+    padding-right: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;    
+}
+
 p.heading {
     font-weight: bold;
+}
+
+.longTextBox {
+    width: 500px;
+}
+
+.shortTextBox {
+    width: 50px;
+}
+
+.educationHistory {
+   display: table;
+    border-width: 1px;
+    padding-left: 15px;
+    padding-right: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;     
 }

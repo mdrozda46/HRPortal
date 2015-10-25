@@ -8,93 +8,96 @@
 
 @using (Html.BeginForm("AddResume", "Apply", FormMethod.Post))
 {
-<div class="form">
-    <div class="contactInfo">
-        <div>
+    <div class="form">
+        <div class="contactInfo">
+            <div>
 
-            <p class="heading">Contact Information:</p>
-            <p></p>
+                <p class="heading">Contact Information:</p>
+                <p></p>
+
+            </div>
+            <div class="ContactField">
+                <div class="tableRow">
+                    <p class="label">First Name:</p>
+                    <p class="field">
+                        @Html.TextBoxFor(m => m.FirstName)
+                    </p>
+                    <p class="label">Last Name:</p>
+                    <p class="field">
+                        @Html.TextBoxFor(m => m.LastName)
+                    </p>
+                    <p class="label">Email:</p>
+                    <p class="field">
+                        @Html.TextBoxFor(m => m.Email)
+                    </p>
+                    <p class="label">Phone Number:</p>
+                    <p class="field">
+                        @Html.TextBoxFor(m => m.PhoneNumber)
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="jobInfo">
+            <div>
+                <p class="heading">Job Applying For:</p>
+                <p></p>
+            </div>
+
+            <div class="jobField">
+                <div class="tableRow">
+                    <p class="label">Desired Position:</p>
+                    <p class="field">
+                        @Html.TextBoxFor(m => m.Position)
+                    </p>
+                    <p class="label">Desired Salary:</p>
+                    <p class="field">
+                        @Html.TextBoxFor(m => m.DesiredSalary)
+                    </p>
+                </div>
+            </div>
+        </div>
+
         
-        </div>
-        <div class="ContactField">
-            <div class="tableRow">
-                <p class="label">First Name:</p>
-                <p class="field">
-                    @Html.TextBoxFor(m => m.FirstName)
-                </p>
-                <p class="label">Last Name:</p>
-                <p class="field">
-                    @Html.TextBoxFor(m => m.LastName)
-                </p>
-            <p class="label">Email:</p>
-                <p class="field">
-                    @Html.TextBoxFor(m => m.Email)
-                </p>
-                <p class="label">Phone Number:</p>
-                <p class="field">
-                    @Html.TextBoxFor(m => m.PhoneNumber)
-                </p>
-            </div>
-        </div>
-           
-    </div>
+            <p>--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+        <div class="employmentHistory">
+            <p class="heading">
+                @Html.Label("Employment History:")
+                <br /><br />
+
+                @Html.EditorFor(m => m.EmploymentHistory[0])
+                <br /><br />
+
+                @Html.EditorFor(m => m.EmploymentHistory[1])
+                <br /><br />
+
+                @Html.EditorFor(m => m.EmploymentHistory[2])
+                <br /><br />
 
 
-    <div class="jobInfo">
+        </div>
         <div>
-            <p class="heading">Job Applying For:</p>
-            <p></p>
-        </div>
-
-        <div class="jobField">
-            <div class="tableRow">
-                <p class="label">Desired Position:</p>
-                <p class="field">
-                    @Html.TextBoxFor(m => m.Position)
-                </p>
-                <p class="label">Desired Salary:</p>
-                <p class="field">
-                    @Html.TextBoxFor(m => m.DesiredSalary)
-                </p>
-            </div>
-    </div>
-    </div>
-
-    <div>
-        <p>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
-        <p>
-            @Html.Label("Employment History:")
-            <br /><br/>
-
-            @Html.EditorFor(m => m.EmploymentHistory[0])
-        <br/><br/>
-
-            @Html.EditorFor(m => m.EmploymentHistory[1])
-        <br/><br/>
-
-            @Html.EditorFor(m => m.EmploymentHistory[2])
+            <p>--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+       <div class="educationHistory">
+                 <p class="heading">
+            @Html.Label("Education History:")
             <br/><br/>
 
-       
-    </div>
-    <div>
-        <p>--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
-        <p>
-            @Html.Label("Education History:")
-        <br/><br/>
-
             @Html.EditorFor(m => m.EducationHistory[0])
-        <br/><br/>
+            <br/><br/>
 
             @Html.EditorFor(m => m.EducationHistory[1])
-        <br/><br/>
+            <br/><br/>
 
             @Html.EditorFor(m => m.EducationHistory[2])
             <br/>
-      
+
+        </div>
+</div>
     </div>
-    
-    </div>
+<br/>
     <button class="btn btn-primary">Submit Application</button>
 }
 
