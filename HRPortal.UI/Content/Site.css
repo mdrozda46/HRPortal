@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -17,15 +18,46 @@ textarea {
 }
 
 /*align personal information divs*/
-.contactInfo {
+
+.form {
+    background-color: beige;
     border-style: solid;
     border-width: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.contactInfo {
+    display: table;
+    border-width: 1px;
+    padding-left: 15px;
+    padding-right: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     text-align: left;
 
 }
+div.tableRow {
+    display: table-row;
+
+}
+p.label {
+    color: black;
+    font-weight: bold;
+}
+
+div.tableRow p {
+    display: table-cell;
+    padding: 3px;
+}
 
 .jobInfo {
-    
+    display: table;
+    border-width: 1px;
+    padding-left: 15px;
+    padding-right: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;
 }
 
 p.heading {
