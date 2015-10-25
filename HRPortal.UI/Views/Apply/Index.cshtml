@@ -4,140 +4,171 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Apply</h2>
+<h2>Application</h2>
 
-@Html.BeginForm("AddResume", "Apply",FormMethod.Post)
+@using (Html.BeginForm("AddResume", "Apply", FormMethod.Post))
 {
 
-<div>
-    <p>
-        <label>First Name:</label>
-        @Html.TextBoxFor(m => m.FirstName)
-    </p>
+    <div class="contactInfo">
+        <div>
+            
+                <p class="heading">Contact Information</p>
+        
+        </div>
+        <div class="ContactField">
+            <p>
+                <label>First Name:</label>
+                @Html.TextBoxFor(m => m.FirstName)
+            </p>
+        </div>
+        <div class ="ContactField">
+            <p>
+                <label>Last Name:</label>
+                @Html.TextBoxFor(m => m.LastName)
+            </p>
+        </div>
+        <div class="ContactField">
+            <p>
+                <label>Email:</label>
+                @Html.TextBoxFor(m => m.Email)
+            </p>
+        </div>
+        <div class="contactField">
+            <p>
+                <label>Phone Number:</label>
+                @Html.TextBoxFor(m => m.PhoneNumber)
+            </p>
+        </div>
+    </div>
 
-    <p>
-        <label>Last Name:</label>
-        @Html.TextBoxFor(m => m.LastName)
-    </p>
 
-    <p>
-        @Html.Label("Email")
-        @Html.TextBoxFor(m => m.Email)
-    </p>
+    <div class="jobInfo">
+        <p class="heading">Job Applying For:</p>
+        <div class="jobField">
+            <p>
+                <label>Desired Position:</label>
+                @Html.TextBoxFor(m => m.Position)
+            </p>
+            </div>
+        <div class="jobField">
+            <p>
+                <label>Desired Salary:</label>
+                @Html.TextBoxFor(m => m.DesiredSalary)
+            </p>
+            </div>
+    </div>
 
-    <p>
-        @Html.Label("Phone Number")
-        @Html.TextBoxFor(m => m.PhoneNumber)
-    </p>
-    <p>
-        @Html.Label("Desired Position")
-        @Html.TextBoxFor(m => m.Position)
-    </p>
-
-    <p>
-        @Html.Label("Desired Salary")
-        @Html.TextBoxFor(m => m.DesiredSalary)
-    </p>
-</div>
-
-<div>
-    <p>----------------------------------------------</p>
-    <p>
-    @Html.Label("Employment History")
-    <br/>
-    <br/>
     <div>
-        @Html.Label("Company Name:")
-        <br/>
-        @Html.TextBoxFor(m => m.EmploymentHistory[0].CompanyName)
-        <br/><br/>
+        <p>----------------------------------------------------------</p>
+        <p>
+            @Html.Label("Employment History:")
+            <br />
+            <br />
+            <div>
+                @Html.Label("Company Name:")
+                <br />
+                @Html.TextBoxFor(m => m.EmploymentHistory[0].CompanyName)
+                <br /><br />
 
-        @Html.Label("Position:")
-        <br/>
-        @Html.TextBoxFor(m => m.EmploymentHistory[0].Position)
-        <br/><br/>
+                @Html.Label("Position:")
+                <br />
+                @Html.TextBoxFor(m => m.EmploymentHistory[0].Position)
+                <br /><br />
 
-        @Html.Label("Years of Employment:")
-        <br/>
-        @Html.TextBoxFor(m => m.EmploymentHistory[0].YearsOfEmployment)
-        <br/><br/>
+                @Html.Label("Years of Employment:")
+                <br />
+                @Html.TextBoxFor(m => m.EmploymentHistory[0].YearsOfEmployment)
+                <br /><br />
 
-        @Html.Label("Job Description:")
-        <br/>
-        @Html.TextAreaFor(m => m.EmploymentHistory[0].JobDescription)
-        <br/><br/>
+                @Html.Label("Job Description:")
+                <br />
+                @Html.TextAreaFor(m => m.EmploymentHistory[0].JobDescription)
+                <br /><br />
+            </div>
+            <div>
+                @Html.Label("Company Name:")
+                <br />
+                @Html.TextBoxFor(m => m.EmploymentHistory[0].CompanyName)
+                <br /><br />
+
+                @Html.Label("Position:")
+                <br />
+                @Html.TextBoxFor(m => m.EmploymentHistory[0].Position)
+                <br /><br />
+
+                @Html.Label("Years of Employment:")
+                <br />
+                @Html.TextBoxFor(m => m.EmploymentHistory[0].YearsOfEmployment)
+                <br /><br />
+
+                @Html.Label("Job Description:")
+                <br />
+                @Html.TextAreaFor(m => m.EmploymentHistory[0].JobDescription)
+                <br /><br />
+            </div>
+            <div>
+                @Html.Label("Company Name:")
+                <br />
+                @Html.TextBoxFor(m => m.EmploymentHistory[0].CompanyName)
+                <br /><br />
+
+                @Html.Label("Position:")
+                <br />
+                @Html.TextBoxFor(m => m.EmploymentHistory[0].Position)
+                <br /><br />
+
+                @Html.Label("Years of Employment:")
+                <br />
+                @Html.TextBoxFor(m => m.EmploymentHistory[0].YearsOfEmployment)
+                <br /><br />
+
+                @Html.Label("Job Description:")
+                <br />
+                @Html.TextAreaFor(m => m.EmploymentHistory[0].JobDescription)
+                <br /><br />
+            </div>
     </div>
     <div>
-        @Html.Label("Company Name:")
-        <br/>
-        @Html.TextBoxFor(m => m.EmploymentHistory[0].CompanyName)
-        <br/><br/>
+        <p>----------------------------------------------</p>
+        <p>
+            @Html.Label("Education History:")
+            <br />
+            <br />
+            <table>
+                <thead>
+                </thead>
+                <tbody>
 
-        @Html.Label("Position:")
-        <br/>
-        @Html.TextBoxFor(m => m.EmploymentHistory[0].Position)
-        <br/><br/>
+                    @for (int i = 0; i < Model.EducationHistory.Count; i++)
+                    {
+                        <tr>
 
-        @Html.Label("Years of Employment:")
-        <br/>
-        @Html.TextBoxFor(m => m.EmploymentHistory[0].YearsOfEmployment)
-        <br/><br/>
+                            @Html.Label("Name:")
+                            @Html.TextBoxFor(m => m.EducationHistory[i].Name)
 
-        @Html.Label("Job Description:")
-        <br/>
-        @Html.TextAreaFor(m => m.EmploymentHistory[0].JobDescription)
-        <br/><br/>
+                            @Html.Label("Type:")
+                            @Html.TextBoxFor(m => m.EducationHistory[i].Type)
+
+                            @Html.Label("Description:")
+                            @Html.TextBoxFor(m => m.EducationHistory[i].Description)
+                        </tr>
+                    }
+                    <tr>
+
+                        @Html.Label("Name:")
+                        @Html.TextBoxFor(m => m.AddedEducationHistory.Name)
+
+                        @Html.Label("Type:")
+                        @Html.TextBoxFor(m => m.AddedEducationHistory.Type)
+
+                        @Html.Label("Description:")
+                        @Html.TextBoxFor(m => m.AddedEducationHistory.Description)
+                    </tr>
+
+                </tbody>
+            </table>
     </div>
-    <div>
-        @Html.Label("Company Name:")
-        <br/>
-        @Html.TextBoxFor(m => m.EmploymentHistory[0].CompanyName)
-        <br/><br/>
 
-        @Html.Label("Position:")
-        <br/>
-        @Html.TextBoxFor(m => m.EmploymentHistory[0].Position)
-        <br/><br/>
-
-        @Html.Label("Years of Employment:")
-        <br/>
-        @Html.TextBoxFor(m => m.EmploymentHistory[0].YearsOfEmployment)
-        <br/><br/>
-
-        @Html.Label("Job Description:")
-        <br/>
-        @Html.TextAreaFor(m => m.EmploymentHistory[0].JobDescription)
-        <br/><br/>
-    </div>
-</div>
-<div>
-    <p>----------------------------------------------</p>
-    <p>
-        @Html.Label("Education History")
-        <br />
-        <br />
-    <table>
-        <thead>
-        </thead>
-        <tbody>
-
-            @for (int i = 0; i < 3; i++)
-            {
-                <tr>
-                    @Html.Label("Name:")
-                    @Html.TextBoxFor(m => m.EmploymentHistory[i].CompanyName)
-
-                    @Html.Label("Type:")
-                    @Html.TextBoxFor(m => m.EmploymentHistory[i].Position)
-
-                    @Html.Label("Description:")
-                    @Html.TextBoxFor(m => m.EmploymentHistory[i].YearsOfEmployment)
-                </tr>
-            }
-        </tbody>
-    </table>
-</div>
-
-<button class="btn btn-primary">Submit</button>
+    <button class="btn btn-primary">Submit</button>
 }
 

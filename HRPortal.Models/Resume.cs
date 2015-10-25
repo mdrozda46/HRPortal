@@ -16,7 +16,9 @@ namespace HRPortal.Models
         public string PhoneNumber { get; set; }
         public string Position { get; set; }
         public List<Employment> EmploymentHistory { get; set; }
+        public Employment AddedEmploymentHistory { get; set; }
         public List<Education> EducationHistory { get; set; }
+        public Education AddedEducationHistory { get; set; }
 
         [DataType(DataType.Currency)]
         public decimal DesiredSalary { get; set; }

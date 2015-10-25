@@ -1,5 +1,4 @@
 ﻿body {
-    
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -17,3 +16,17 @@ textarea {
     max-width: 280px;
 }
 
+/*align personal information divs*/
+.contactInfo {
+    padding-left: 15px;
+}
+
+.jobInfo {
+    padding-top: 50px;
+    padding-left: 500px;
+    padding-right: 15px;
+}
+
+p.heading {
+    font-weight: bold;
+}
