@@ -1,0 +1,21 @@
+2
+Randall
+Clapper
+867-5309
+rclapper@swguild.com
+10/23/2015 12:00:00 AM
+TA
+100000
+2
+Software Guild
+TA
+1
+Taught apprentices
+Cleveland Clinic
+Senior Developer
+2
+Web services architect
+1
+Ohio State University
+Bachelor of Science
+Computer Science

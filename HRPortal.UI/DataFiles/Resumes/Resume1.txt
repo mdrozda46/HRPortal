@@ -1,0 +1,24 @@
+1
+Victor
+Pudelski
+876-5309
+vpudelski@swguild.com
+10/23/2015 12:00:00 AM
+Lead Instructor
+90000
+2
+Software Guild
+Lead Instructor
+1
+Taught apprentices
+DataBank IMX
+Director of Development and Database Services
+2
+Team development and database services
+2
+Cleveland State University
+Bachelor of Science
+Computer Science
+Cleveland State University
+Master of Science 
+Mathematics
