@@ -128,7 +128,8 @@
     <Content Include="Views\Manager\Index.cshtml" />
     <Content Include="Views\Apply\Index.cshtml" />
     <Content Include="Views\Apply\Result.cshtml" />
-    <Content Include="Views\Apply\AddEducation.cshtml" />
+    <Content Include="Views\Apply\EditorTemplates\Education.cshtml" />
+    <Content Include="Views\Apply\EditorTemplates\Employment.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

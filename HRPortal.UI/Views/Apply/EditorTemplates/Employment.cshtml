@@ -1,0 +1,26 @@
+﻿@model HRPortal.Models.Employment
+
+
+<div class="job">
+    <div class="tableRow">
+    <p class="heading">
+        @Html.Label("Company Name:")
+    </p>
+        <p class="field">
+            @Html.TextBoxFor(m => m.CompanyName, new {@class = "longTextBox"})
+        </p>
+        </div>
+
+    <div class="Employment">
+        <div class="tableRow">
+            <p></p>
+            <p class="label">@Html.Label("Position:")</p>
+            <p class="field">@Html.TextBoxFor(m => m.Position, new { @class = "longTextBox" })</p>
+            <p class="label">@Html.Label("Years of Employment:")</p>
+            <p class="field">@Html.TextBoxFor(m => m.YearsOfEmployment, new {@class = "shortTextBox"})</p>
+            <p class="label">@Html.Label("Job Description:")</p>
+            <p>@Html.TextAreaFor(m => m.JobDescription, 8, 40, null)</p>
+
+        </div>
+    </div>
+  </div>
