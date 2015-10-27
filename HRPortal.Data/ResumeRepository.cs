@@ -133,6 +133,9 @@ namespace HRPortal.Data
                 writer.WriteLine("{0}", resume.Position);
                 writer.WriteLine("{0}", resume.DesiredSalary);
 
+                // Remove blank entries from list before writing to file
+                resume.EmploymentHistory.RemoveAll(r => r.CompanyName == null);
+
                 // Note the number of employment entries in the text file
                 writer.WriteLine("{0}", resume.EmploymentHistory.Count);
 
@@ -143,6 +146,9 @@ namespace HRPortal.Data
                     writer.WriteLine("{0}", employer.YearsOfEmployment);
                     writer.WriteLine("{0}", employer.JobDescription);
                 }
+
+                // Remove blank entries from list before writing to file
+                resume.EducationHistory.RemoveAll(r => r.Name == null);
 
                 // Note the number of education entries in the text file
                 writer.WriteLine("{0}", resume.EducationHistory.Count);
