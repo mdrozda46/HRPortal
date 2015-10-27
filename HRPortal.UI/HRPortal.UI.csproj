@@ -92,6 +92,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="DataFiles\Policies\HR\HealthBenefits.txt" />
+    <Content Include="DataFiles\Policies\HR\Vacation.txt" />
+    <Content Include="DataFiles\Policies\Security\ComputerSecurity.txt" />
+    <Content Include="DataFiles\Policies\Security\NDA.txt" />
     <Content Include="DataFiles\Resumes\Resume1.txt" />
     <Content Include="DataFiles\Resumes\Resume2.txt" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
