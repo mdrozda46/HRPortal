@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.ComTypes;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,25 +23,28 @@ namespace HRPortal.Data
             _policies.Clear();
             _categories.Clear();
 
-            _categories = Directory.GetDirectories(_filePath).ToList();
-            string category = "";
+            var categoryDirectories = Directory.GetDirectories(_filePath).ToList();
 
-            foreach (var folder in _categories)
+            foreach (var folder in categoryDirectories)
             {
-                Policy newPolicy = new Policy();
-
-                var files = Directory.GetFiles(_filePath + folder);
-                category = folder;
+                var files = Directory.GetFiles(folder);
 
                 foreach (var file in files)
                 {
+                    Policy newPolicy = new Policy();
                     var reader = File.ReadAllLines(file);
-                    newPolicy.CategoryID = category;
-                    newPolicy.Name = file;
+                    newPolicy.Category = reader[0];
 
-                    for (int i = 0; i < reader.Length; i++)
+                    if (!(_categories.Contains(newPolicy.Category)))
                     {
-                        newPolicy.Description = newPolicy.Description + "\n" + reader[i];
+                        _categories.Add(newPolicy.Category);
+                    }
+
+                    newPolicy.Name = reader[1];
+
+                    for (int i = 2; i < reader.Length; i++)
+                    {
+                        newPolicy.Description = newPolicy.Description + reader[i] + "\n";
                     }
 
                     _policies.Add(newPolicy);
@@ -47,100 +52,70 @@ namespace HRPortal.Data
 
             }
         }
-    
-    public List<Policy> GetAllPolicies()
-    {
-        return _policies;
-    }
+
+        public List<Policy> GetAllPolicies()
+        {
+            return _policies;
+        }
 
         public List<string> GetAllCategories()
         {
             return _categories;
-        } 
+        }
 
-    public void AddPolicy(Policy newPolicy)
-    {
+        public void AddPolicy(Policy newPolicy)
+        {
 
-        _policies.Add(newPolicy);
-            AddCategory(newPolicy.CategoryID);
+            _policies.Add(newPolicy);
 
-        WritePolicyToFile(newPolicy);
-    }
+            AddCategory(newPolicy.Category);
+
+            WritePolicyToFile(newPolicy);
+        }
 
         public void AddCategory(string newCategory)
         {
             if (!(_categories.Contains(newCategory)))
             {
-                Directory.CreateDirectory(_filePath + newCategory);
+                Directory.CreateDirectory((_filePath + newCategory).Replace(" ", String.Empty));
                 _categories.Add(newCategory);
             }
         }
 
-    public void DeletePolicy(Policy policy)
-    {
-        _policies.RemoveAll(r => r.Name == policy.Name);
-
-        string policyFilePath = _filePath + policy.CategoryID  + "\\" + policy.Name + ".txt";
-
-        if (File.Exists(policyFilePath))
+        public void DeletePolicy(Policy policy)
         {
-            File.Delete(policyFilePath);
+            _policies.RemoveAll(r => r.Name == policy.Name);
+
+            string policyFilePath = (_filePath + policy.Category + "\\" + policy.Name + ".txt").Replace(" ", String.Empty);
+
+            if (File.Exists(policyFilePath))
+            {
+                File.Delete(policyFilePath);
+            }
+        }
+
+        public Policy GetByName(string name)
+         {
+             return _policies.FirstOrDefault(r => r.Name == name);
+         }
+
+        private void WritePolicyToFile(Policy newPolicy)
+        {
+            string policyFilePath = (_filePath + newPolicy.Category + "\\" + newPolicy.Name + ".txt").Replace(" ", String.Empty);
+
+            if (File.Exists(policyFilePath))
+             {
+                File.Delete(policyFilePath);
+            }
+
+            using (var writer = File.CreateText(policyFilePath))
+            {
+
+                writer.WriteLine("{0}", newPolicy.Category);
+                writer.WriteLine("{0}", newPolicy.Name);
+                writer.WriteLine("{0}", newPolicy.Description);
+
+            }
         }
     }
-
-   //public Resume GetById(int id)
-   // {
-   //     return _resumes.FirstOrDefault(r => r.ID == id);
-   // }
-
-    private void WritePolicyToFile(Policy newPolicy)
-    {
-        //string resumeFilePath = _filePath + "Resume" + resume.ID + ".txt";
-
-        //if (File.Exists(resumeFilePath))
-        //{
-        //    File.Delete(resumeFilePath);
-        //}
-
-        //using (var writer = File.CreateText(resumeFilePath))
-        //{
-
-        //    writer.WriteLine("{0}", resume.ID);
-        //    writer.WriteLine("{0}", resume.FirstName);
-        //    writer.WriteLine("{0}", resume.LastName);
-        //    writer.WriteLine("{0}", resume.PhoneNumber);
-        //    writer.WriteLine("{0}", resume.Email);
-        //    writer.WriteLine("{0}", resume.DateOfApplication);
-        //    writer.WriteLine("{0}", resume.Position);
-        //    writer.WriteLine("{0}", resume.DesiredSalary);
-
-        //    // Remove blank entries from list before writing to file
-        //    resume.EmploymentHistory.RemoveAll(r => r.CompanyName == null);
-
-        //    // Note the number of employment entries in the text file
-        //    writer.WriteLine("{0}", resume.EmploymentHistory.Count);
-
-        //    foreach (var employer in resume.EmploymentHistory)
-        //    {
-        //        writer.WriteLine("{0}", employer.CompanyName);
-        //        writer.WriteLine("{0}", employer.Position);
-        //        writer.WriteLine("{0}", employer.YearsOfEmployment);
-        //        writer.WriteLine("{0}", employer.JobDescription);
-        //    }
-
-        //    // Remove blank entries from list before writing to file
-        //    resume.EducationHistory.RemoveAll(r => r.Name == null);
-
-        //    // Note the number of education entries in the text file
-        //    writer.WriteLine("{0}", resume.EducationHistory.Count);
-
-        //    foreach (var education in resume.EducationHistory)
-        //    {
-        //        writer.WriteLine("{0}", education.Name);
-        //        writer.WriteLine("{0}", education.Type);
-        //        writer.WriteLine("{0}", education.Description);
-        //    }
-       // }
-    }
-}
 }

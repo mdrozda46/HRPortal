@@ -92,10 +92,18 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="DataFiles\Policies\HR\HealthBenefits.txt" />
-    <Content Include="DataFiles\Policies\HR\Vacation.txt" />
-    <Content Include="DataFiles\Policies\Security\ComputerSecurity.txt" />
-    <Content Include="DataFiles\Policies\Security\NDA.txt" />
+    <Content Include="DataFiles\Policies\HR\HealthBenefits.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataFiles\Policies\HR\Vacation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataFiles\Policies\SecurityRules\ComputerSecurity.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataFiles\Policies\SecurityRules\NDA.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="DataFiles\Resumes\Resume1.txt" />
     <Content Include="DataFiles\Resumes\Resume2.txt" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -113,6 +121,7 @@
     <Compile Include="Controllers\ApplyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
+    <Compile Include="Controllers\PolicyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -134,6 +143,7 @@
     <Content Include="Views\Apply\Result.cshtml" />
     <Content Include="Views\Apply\EditorTemplates\Education.cshtml" />
     <Content Include="Views\Apply\EditorTemplates\Employment.cshtml" />
+    <Content Include="Views\Policy\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
