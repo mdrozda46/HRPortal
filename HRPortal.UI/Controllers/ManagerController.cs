@@ -36,5 +36,7 @@ namespace HRPortal.UI.Controllers
 
             return View("Index", resumes);
         }
+
+
     }
 }

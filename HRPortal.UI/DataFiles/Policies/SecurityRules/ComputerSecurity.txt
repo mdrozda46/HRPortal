@@ -1,4 +1,5 @@
-﻿Security Rules
+﻿3
+Security Rules
 Computer Security
 Password must contain more than 8 character.
 Must be changed once every 6 months. 

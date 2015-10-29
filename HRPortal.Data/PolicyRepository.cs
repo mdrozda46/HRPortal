@@ -33,16 +33,19 @@ namespace HRPortal.Data
                 {
                     Policy newPolicy = new Policy();
                     var reader = File.ReadAllLines(file);
-                    newPolicy.Category = reader[0];
+
+                    newPolicy.ID = int.Parse(reader[0]);
+
+                    newPolicy.Category = reader[1];
 
                     if (!(_categories.Contains(newPolicy.Category)))
                     {
                         _categories.Add(newPolicy.Category);
                     }
 
-                    newPolicy.Name = reader[1];
+                    newPolicy.Name = reader[2];
 
-                    for (int i = 2; i < reader.Length; i++)
+                    for (int i = 3; i < reader.Length; i++)
                     {
                         newPolicy.Description = newPolicy.Description + reader[i] + "\n";
                     }
@@ -65,6 +68,7 @@ namespace HRPortal.Data
 
         public void AddPolicy(Policy newPolicy)
         {
+            newPolicy.ID = _policies.Max(p => p.ID) + 1;
 
             _policies.Add(newPolicy);
 
@@ -82,9 +86,11 @@ namespace HRPortal.Data
             }
         }
 
-        public void DeletePolicy(Policy policy)
+        public void DeletePolicy(int ID)
         {
-            _policies.RemoveAll(r => r.Name == policy.Name);
+            var policy = GetByID(ID);
+
+            _policies.RemoveAll(r => r.ID == ID);
 
             string policyFilePath = (_filePath + policy.Category + "\\" + policy.Name + ".txt").Replace(" ", String.Empty);
 
@@ -94,9 +100,9 @@ namespace HRPortal.Data
             }
         }
 
-        public Policy GetByName(string name)
+        public Policy GetByID(int ID)
          {
-             return _policies.FirstOrDefault(r => r.Name == name);
+             return _policies.FirstOrDefault(r => r.ID == ID);
          }
 
         private void WritePolicyToFile(Policy newPolicy)
@@ -110,7 +116,7 @@ namespace HRPortal.Data
 
             using (var writer = File.CreateText(policyFilePath))
             {
-
+                writer.WriteLine("{0}", newPolicy.ID);
                 writer.WriteLine("{0}", newPolicy.Category);
                 writer.WriteLine("{0}", newPolicy.Name);
                 writer.WriteLine("{0}", newPolicy.Description);

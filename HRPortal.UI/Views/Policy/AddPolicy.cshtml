@@ -1,0 +1,27 @@
+﻿@model HRPortal.UI.PolicyToViewVM
+
+@{
+    ViewBag.Title = "AddPolicy";
+}
+
+<h2>Add Policy</h2>
+
+@using (@Html.BeginForm("AddPolicy", "Policy", FormMethod.Post))
+{
+
+    <h4>Select a Category:</h4>
+    @Html.DropDownListFor(m => m.categorySelected, Model.Categories)
+
+    <h4>Policy Name:</h4>
+    @Html.TextBox("Name")
+
+    <h4>Description:</h4>
+    @Html.TextArea("Description")
+
+    <button>Add</button>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

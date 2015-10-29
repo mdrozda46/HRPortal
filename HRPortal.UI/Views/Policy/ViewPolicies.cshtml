@@ -1,0 +1,26 @@
+﻿@model HRPortal.UI.PolicyToViewVM
+
+@{
+    ViewBag.Title = "ViewPolicies";
+}
+
+<h2>View Policies</h2>
+
+@using (Html.BeginForm("ViewPolicies", "Policy", FormMethod.Post))
+{
+    @Html.DropDownListFor(m=>m.categorySelected, Model.Categories)
+
+    <button>Submit</button>
+}
+
+@foreach (var p in Model.Policies)
+{
+    @Html.ActionLink(p.Name, "ViewPolicy", "Policy", new { ID = p.ID}, null)
+    <br/>
+
+}
+
+
+
+
+

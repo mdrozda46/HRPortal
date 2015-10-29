@@ -125,6 +125,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PolicyToViewVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +145,12 @@
     <Content Include="Views\Apply\EditorTemplates\Education.cshtml" />
     <Content Include="Views\Apply\EditorTemplates\Employment.cshtml" />
     <Content Include="Views\Policy\Index.cshtml" />
+    <Content Include="Views\Policy\ViewPolicies.cshtml" />
+    <Content Include="Views\Policy\ViewPolicy.cshtml" />
+    <Content Include="Views\Policy\ManagePolicies.cshtml" />
+    <Content Include="Views\Policy\DeletePolicy.cshtml" />
+    <Content Include="Views\Policy\AddPolicy.cshtml" />
+    <Content Include="Views\Policy\AddSuccess.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -153,7 +160,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HRPortal.Data\HRPortal.Data.csproj">
