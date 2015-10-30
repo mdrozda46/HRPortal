@@ -95,6 +95,7 @@
     <Content Include="DataFiles\Policies\HR\HealthBenefits.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="DataFiles\Policies\HR\HR.txt" />
     <Content Include="DataFiles\Policies\HR\Vacation.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -104,6 +105,7 @@
     <Content Include="DataFiles\Policies\SecurityRules\NDA.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="DataFiles\Policies\SecurityRules\SecurityRules.txt" />
     <Content Include="DataFiles\Resumes\Resume1.txt" />
     <Content Include="DataFiles\Resumes\Resume2.txt" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -151,6 +153,10 @@
     <Content Include="Views\Policy\DeletePolicy.cshtml" />
     <Content Include="Views\Policy\AddPolicy.cshtml" />
     <Content Include="Views\Policy\AddSuccess.cshtml" />
+    <Content Include="Views\Shared\_ApplyForm.cshtml" />
+    <Content Include="Views\Apply\ApplyForm.cshtml" />
+    <Content Include="Views\Apply\ResultSuccess.cshtml" />
+    <Content Include="Views\Policy\AddCategory.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

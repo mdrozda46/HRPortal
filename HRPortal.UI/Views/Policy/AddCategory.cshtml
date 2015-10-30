@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "AddCategory";
+}
+
+<h2>Add Category</h2>
+@using (Html.BeginForm("AddCategory", "Policy", FormMethod.Post))
+{
+    <label>Enter a new category name:</label>
+    <input type="text" name="category"/>
+    <br/>
+    <button>Submit</button>
+}

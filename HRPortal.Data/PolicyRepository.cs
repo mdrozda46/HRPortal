@@ -31,26 +31,30 @@ namespace HRPortal.Data
 
                 foreach (var file in files)
                 {
-                    Policy newPolicy = new Policy();
-                    var reader = File.ReadAllLines(file);
-
-                    newPolicy.ID = int.Parse(reader[0]);
-
-                    newPolicy.Category = reader[1];
-
-                    if (!(_categories.Contains(newPolicy.Category)))
+                    var position = folder.LastIndexOf('\\');
+                    if (file == folder + folder.Substring(position) + ".txt")
                     {
-                        _categories.Add(newPolicy.Category);
+                        var reader = File.ReadAllLines(file);
+                        _categories.Add(reader[0]);
                     }
-
-                    newPolicy.Name = reader[2];
-
-                    for (int i = 3; i < reader.Length; i++)
+                    else
                     {
-                        newPolicy.Description = newPolicy.Description + reader[i] + "\n";
-                    }
+                        Policy newPolicy = new Policy();
+                        var reader = File.ReadAllLines(file);
 
-                    _policies.Add(newPolicy);
+                        newPolicy.ID = int.Parse(reader[0]);
+
+                        newPolicy.Category = reader[1];
+
+                        newPolicy.Name = reader[2];
+
+                        for (int i = 3; i < reader.Length; i++)
+                        {
+                            newPolicy.Description = newPolicy.Description + reader[i] + "\n";
+                        }
+
+                        _policies.Add(newPolicy);
+                    }
                 }
 
             }
@@ -83,6 +87,12 @@ namespace HRPortal.Data
             {
                 Directory.CreateDirectory((_filePath + newCategory).Replace(" ", String.Empty));
                 _categories.Add(newCategory);
+
+                using (var writer = File.CreateText((_filePath + newCategory + "\\" + newCategory + ".txt").Replace(" ", String.Empty)))
+                {
+                    writer.WriteLine("{0}", newCategory);
+                }
+
             }
         }
 

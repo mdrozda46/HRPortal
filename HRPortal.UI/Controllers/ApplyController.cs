@@ -35,5 +35,25 @@ namespace HRPortal.UI.Controllers
         {
             return View();
         }
+
+        public ActionResult ApplyForm()
+        {
+            return View(new Resume());
+        }
+
+        [HttpPost]
+        public ActionResult ApplyForm(Resume resume)
+        {
+
+
+            var repo = Factory.CreateResumeRepository();
+
+            resume.DateOfApplication = DateTime.Now;
+            var resumes = repo.GetAll();
+            resume.ID = resumes.Max(r => r.ID) + 1;
+            repo.Add(resume);
+
+            return View("ResultSuccess");
+        }
     }
 }

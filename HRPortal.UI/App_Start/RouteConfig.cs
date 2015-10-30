@@ -12,6 +12,11 @@ namespace HRPortal.UI
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapRoute(
+               name: "Apply",
+               url: "apply/{action}/{id}",
+               defaults: new { controller = "Apply", action = "ApplyForm", id = UrlParameter.Optional }
+           );
 
             routes.MapRoute(
                 name: "Default",

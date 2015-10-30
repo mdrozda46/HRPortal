@@ -84,5 +84,20 @@ namespace HRPortal.UI.Controllers
 
             return View("AddSuccess");
         }
+
+        public ActionResult AddCategory()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddCategory(string cat)
+        {
+            string category = Request.Form["category"];
+            var repo = new PolicyRepository();
+            repo.AddCategory(category);
+            return RedirectToAction("AddPolicy", "Policy");
+            
+        }
     }
 }
