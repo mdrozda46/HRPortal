@@ -15,10 +15,11 @@
 
 @foreach (var p in Model.Policies)
 {
-    @Html.ActionLink(p.Name, "ViewPolicy", "Policy", new { ID = p.ID}, null)
-    <br/>
+    @Html.ActionLink(p.Name, "ViewPolicy", "Policy", new { ID = p.ID }, null)
+    <br />
 
 }
+
 
 
 

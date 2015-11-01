@@ -91,3 +91,14 @@ p.heading {
     padding-bottom: 15px;
     text-align: left;     
 }
+
+.homepage {
+    float: left;
+    padding-left: 10px;
+    }
+.homebody {
+    padding-left: 300px;
+}
+.homeimage {
+    padding-left: 350px;
+}

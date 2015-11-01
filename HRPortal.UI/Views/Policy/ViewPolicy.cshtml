@@ -1,12 +1,39 @@
-﻿@model HRPortal.Models.Policy
+﻿@using System.Web.UI.WebControls
+@model HRPortal.Models.Policy
 
 @{
     ViewBag.Title = "ViewPolicy";
 }
 
-<h2>View Policy</h2>
+<h2>Policy</h2>
 
-<label>Category:</label>
+<body>
+    <div>
+      
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Catgeory</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Html.DisplayFor(m => m.Category)</td>
+                        <td>@Html.DisplayFor(m => m.Name)</td>
+                        <td>@Html.DisplayFor(m => m.Description)</td>
+
+                    </tr>
+                </tbody>
+            </table>
+      
+    </div>
+
+</body>
+
+
+@*<label>Category:</label>
 <br />
 @Html.DisplayFor(m => m.Category)
 <br/>
@@ -18,4 +45,4 @@
 <br />
 <label>Description:</label>
 <br />
-@Html.DisplayFor(m => m.Description)
+@Html.DisplayFor(m => m.Description)*@

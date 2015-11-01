@@ -1,5 +1,6 @@
 ﻿@model HRPortal.UI.PolicyToViewVM
 
+
 @{
     ViewBag.Title = "AddPolicy";
 }
@@ -11,7 +12,7 @@
 
     <h4>Select a Category:</h4>
     @Html.DropDownListFor(m => m.categorySelected, Model.Categories)
-    @Html.ActionLink("Add", "AddCategory", "Policy", null, new {@class = "btn-group-sm"})
+    @Html.ActionLink(" Add", "AddCategory", "Policy", null, new {@class = "btn-group-sm"})
     <h4>Policy Name:</h4>
     @Html.TextBox("Name")
 
