@@ -8,9 +8,8 @@
 
 @using (Html.BeginForm("ViewPolicies", "Policy", FormMethod.Post))
 {
-    @Html.DropDownListFor(m=>m.categorySelected, Model.Categories)
+    @Html.DropDownListFor(m => m.categorySelected, Model.Categories, null, new { @onchange = "this.form.submit()" })
 
-    <button>Submit</button>
 }
 
 @foreach (var p in Model.Policies)

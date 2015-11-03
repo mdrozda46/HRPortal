@@ -7,6 +7,7 @@
 <h2>Application</h2>
 @using (Html.BeginForm("AddResume", "Apply", FormMethod.Post))
 {
+    @Html.ValidationSummary(true)
     @Html.Partial("_ApplyForm")
 
     <button class="btn btn-primary">Submit Application</button>

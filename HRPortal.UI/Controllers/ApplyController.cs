@@ -20,15 +20,17 @@ namespace HRPortal.UI.Controllers
         public ActionResult AddResume(Resume resume)
         {
 
-            
-            var repo = Factory.CreateResumeRepository();
+            if (ModelState.IsValid)
+            {
+                var repo = Factory.CreateResumeRepository();
 
-            resume.DateOfApplication = DateTime.Now;
-            var resumes = repo.GetAll();
-            resume.ID = resumes.Max(r => r.ID) + 1;
-            repo.Add(resume);
-
-            return View("Result");
+                resume.DateOfApplication = DateTime.Now;
+                var resumes = repo.GetAll();
+                resume.ID = resumes.Max(r => r.ID) + 1;
+                repo.Add(resume);
+                return View("Result");
+            }
+            return View("Index");
         }
 
         public ActionResult AddEducation(Resume resume)
@@ -48,12 +50,16 @@ namespace HRPortal.UI.Controllers
 
             var repo = Factory.CreateResumeRepository();
 
-            resume.DateOfApplication = DateTime.Now;
-            var resumes = repo.GetAll();
-            resume.ID = resumes.Max(r => r.ID) + 1;
-            repo.Add(resume);
+            if (ModelState.IsValid)
+            {
+                resume.DateOfApplication = DateTime.Now;
+                var resumes = repo.GetAll();
+                resume.ID = resumes.Max(r => r.ID) + 1;
+                repo.Add(resume);
+                return View("ResultSuccess");
+            }
 
-            return View("ResultSuccess");
+            return View();
         }
     }
 }

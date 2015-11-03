@@ -40,8 +40,10 @@
 
     <div class="container body-content">
         <h2>Job Application</h2>
+       
 @using (Html.BeginForm("ApplyForm", "Apply", FormMethod.Post))
 {
+        @Html.ValidationSummary(true)
         @Html.Partial("_ApplyForm")
 
     <button class="btn btn-primary">Submit Application</button>

@@ -29,81 +29,80 @@
             @Html.DisplayFor(m => m.PhoneNumber)
         </p>
     </div>
-    <div class="contactInfo">
-        <p class="heading">Desired Job: </p>
-    </div>
+</div>
 
-    <div class ="tableRow">
-    <p>
-        @Html.Label("Desired Position")
-        @Html.DisplayFor(m => m.Position)
-    </p>
+<p>--------------------------------------------------------------------------------------------------------------------</p><br/>
 
-    <p>
-        @Html.Label("Desired Salary")
-        @Html.DisplayFor(m => m.DesiredSalary)
-    </p>
+<div>
+    <p class="heading">Desired Job: </p>
+</div>
+
+
+<div class="contactInfo">
+    <div class="tableRow">
+        <p>
+            @Html.Label("Desired Position")
+            @Html.DisplayFor(m => m.Position)
+        </p>
+
+        <p>
+            @Html.Label("Desired Salary")
+            @Html.DisplayFor(m => m.DesiredSalary)
+        </p>
     </div>
 </div>
 
-<div>
-    <p>----------------------------------------------</p>
-    <p>
-        @Html.Label("Employment History")
-        <br/>
-        <br/>
-
-        @foreach (var p in Model.EmploymentHistory)
-        {
-
-            @Html.Label("Company Name:")
-            <br/>            
-            @p.CompanyName
-            <br/><br />
-
-            @Html.Label("Position:")
+    <div>
+        <p>--------------------------------------------------------------------------------------------------------------------</p><br />
+        <p>
+            @Html.Label("Employment History")
             <br />
-            @p.Position
-            <br/><br />
-            
-            @Html.Label("Years of Employment:")
-            <br/>
-            @p.YearsOfEmployment.ToString()
-            <br/><br />
+            <br />
 
-            @Html.Label("Job Description:")
-            <br/>
-            @p.JobDescription
-            <br/><br />
+            @foreach (var p in Model.EmploymentHistory)
+            {
 
-        }
-    </p>
-</div>
+                @Html.Label("Company Name: ")
+                @p.CompanyName              
+                <br />
 
-<div>
-    <p>------------------------------------------------------</p>
-    <p>
-        @Html.Label("Education History")
-        <br/> <br />
-        @foreach (var e in Model.EducationHistory)
-        {
+                @Html.Label("Position:")
+                @p.Position
+                <br />
 
-            @Html.Label("Name:")
-            <br/>
-            @e.Name
-            <br/><br />
+                @Html.Label("Years of Employment:")
+                @p.YearsOfEmployment.ToString()
+                <br />
 
-            @Html.Label("Program Type:")
-            <br/>            
-            @e.Type
-            <br/><br />
+                @Html.Label("Job Description:")
+                @p.JobDescription
+                <br /><br /><br/>
 
-            @Html.Label("Program Description:")
-            <br/>            
-            @e.Description
-            <br/>
-        }
-    </p>
+            }
+        </p>
+    </div>
 
-</div>
+    <div>
+        <p>--------------------------------------------------------------------------------------------------------------------</p><br />
+        <p>
+            @Html.Label("Education History")
+            <br /> <br />
+            @foreach (var e in Model.EducationHistory)
+            {
+
+                @Html.Label("Name:")
+                @e.Name
+                <br />
+
+                @Html.Label("Program Type:")
+                @e.Type
+                <br />
+
+                @Html.Label("Program Description:")
+                @e.Description
+                <br /><br /><br />
+            }
+        </p>
+
+    </div>
 

@@ -16,6 +16,8 @@ namespace HRPortal.Models
         }
 
         public int ID { get; set; }
+
+        [Required(ErrorMessage = "Enter a name.")]
         public string FirstName { get; set; }
         public string LastName { get; set; }
         [DataType(DataType.EmailAddress)]
