@@ -12,13 +12,13 @@
 
 @using (Html.BeginForm("ManagePolicies", "Policy", FormMethod.Post))
 {
-    @Html.DropDownListFor(m => m.categorySelected, Model.Categories, null, new { @onchange = "this.form.submit()" })
+    @Html.DropDownListFor(m => m.categorySelected, Model.Categories, null, new { @onchange = "this.form.submit()", @class = "btn btn - default dropdown- toggle" })
 }
 
 @foreach (var p in Model.Policies)
 {
-    @Html.Label(p.Name)
-    @Html.ActionLink("Delete", "DeletePolicy", "Policy", new { ID = p.ID }, new { @class = "btn btn-sm"})
-    <br />
-
+    <li class="list-group-item">
+        @Html.Label(p.Name)
+        @Html.ActionLink("Delete", "DeletePolicy", "Policy", new { ID = p.ID }, new { @class = "btn btn-sm" })
+    </li>
 }

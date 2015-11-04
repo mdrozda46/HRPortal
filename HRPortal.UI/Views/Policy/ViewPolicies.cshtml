@@ -8,16 +8,16 @@
 
 @using (Html.BeginForm("ViewPolicies", "Policy", FormMethod.Post))
 {
-    @Html.DropDownListFor(m => m.categorySelected, Model.Categories, null, new { @onchange = "this.form.submit()" })
+    @Html.DropDownListFor(m => m.categorySelected, Model.Categories, null, new { @onchange = "this.form.submit()", @class = "btn btn-default dropdown-toggle" })
 
 }
 
-@foreach (var p in Model.Policies)
-{
-    @Html.ActionLink(p.Name, "ViewPolicy", "Policy", new { ID = p.ID }, null)
-    <br />
-
-}
+<ul class="list-group">
+    @foreach (var p in Model.Policies)
+    {
+        <li class="list-group-item">@Html.ActionLink(p.Name, "ViewPolicy", "Policy", new { ID = p.ID }, null)</li>
+    }
+</ul>
 
 
 
