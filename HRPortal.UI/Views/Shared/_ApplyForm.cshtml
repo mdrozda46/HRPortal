@@ -15,7 +15,9 @@
                 </div>
                 <div class="ContactField">
                     <div class="tableRow">
+                        <span style="color: red">
                         @Html.ValidationMessageFor(m => m.FirstName)
+                            </span>
                         <p class="label">First Name:</p>
                         <p class="field">
                             @Html.TextBoxFor(m => m.FirstName)
