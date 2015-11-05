@@ -27,11 +27,10 @@ namespace HRPortal.UI.Controllers
             return View(resume);
         }
 
-        [HttpPost]
-        public ActionResult DeleteResume(Resume resume)
+        public ActionResult DeleteResume(int ID)
         {
             var repo = Factory.CreateResumeRepository();
-            repo.Delete(resume.ID);
+            repo.Delete(ID);
             var resumes = repo.GetAll();
 
             return View("Index", resumes);
