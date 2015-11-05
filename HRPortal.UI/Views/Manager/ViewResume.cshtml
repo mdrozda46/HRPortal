@@ -13,19 +13,19 @@
 <p></p>
 
 <div>
-    <p class="heading">Contact Information: </p>
+    <p class="heading">Contact Information </p>
 </div>
 
 <div class="contactInfo">
 
     <div class="tableRow">
         <p>
-            @Html.Label("Email")
+            @Html.Label("Email: ")
             @Html.DisplayFor(m => m.Email)
         </p>
 
         <p>
-            @Html.Label("Phone Number")
+            @Html.Label("Phone Number: ")
             @Html.DisplayFor(m => m.PhoneNumber)
         </p>
     </div>
@@ -34,19 +34,19 @@
 <p>--------------------------------------------------------------------------------------------------------------------</p><br/>
 
 <div>
-    <p class="heading">Desired Job: </p>
+    <p class="heading">Desired Job </p>
 </div>
 
 
 <div class="contactInfo">
     <div class="tableRow">
         <p>
-            @Html.Label("Desired Position")
+            @Html.Label("Desired Position: ")
             @Html.DisplayFor(m => m.Position)
         </p>
 
         <p>
-            @Html.Label("Desired Salary")
+            @Html.Label("Desired Salary: ")
             @Html.DisplayFor(m => m.DesiredSalary)
         </p>
     </div>
@@ -54,8 +54,10 @@
 
     <div>
         <p>--------------------------------------------------------------------------------------------------------------------</p><br />
-        <p>
+        <p class="heading">
             @Html.Label("Employment History")
+        </p>
+        <p>
             <br />
             <br />
 
@@ -84,9 +86,11 @@
 
     <div>
         <p>--------------------------------------------------------------------------------------------------------------------</p><br />
-        <p>
+        <p class="heading">
             @Html.Label("Education History")
-            <br /> <br />
+            <br/> <br/>
+        </p>
+        <p>
             @foreach (var e in Model.EducationHistory)
             {
 

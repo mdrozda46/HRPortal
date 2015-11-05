@@ -73,6 +73,7 @@ div.tableRow p {
 
 p.heading {
     font-weight: bold;
+    color: blue;
 }
 
 .longTextBox {
