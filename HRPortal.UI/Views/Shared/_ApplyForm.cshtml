@@ -3,24 +3,27 @@
 
 <body>
 
-
-   
+    <span style="color: red">
+        @Html.ValidationMessageFor(m => m.FirstName)
+        @Html.ValidationMessageFor(m => m.LastName)
+        @Html.ValidationMessageFor(m => m.Email)
+        @Html.ValidationMessageFor(m => m.PhoneNumber)
+        @Html.ValidationMessageFor(m => m.Position)
+        @Html.ValidationMessageFor(m => m.DesiredSalary)
+    </span> 
         <div class="form">
             <div class="contactInfo">
                 <div>
-
+                   
                     <p class="heading">Contact Information:</p>
                     <p></p>
 
                 </div>
                 <div class="ContactField">
                     <div class="tableRow">
-                        <span style="color: red">
-                        @Html.ValidationMessageFor(m => m.FirstName)
-                            </span>
                         <p class="label">First Name:</p>
                         <p class="field">
-                            @Html.TextBoxFor(m => m.FirstName)
+                            @Html.EditorFor(m => m.FirstName)
                         </p>
                         <p class="label">Last Name:</p>
                         <p class="field">
