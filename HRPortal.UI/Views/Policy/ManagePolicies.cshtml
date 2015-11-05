@@ -6,14 +6,14 @@
 
 <h2>Manage Policies</h2>
 
-<p>
-    @Html.ActionLink("Create New", "AddPolicy", "Policy", null, new { @class = "btn btn-primary" })
-</p>
 
 @using (Html.BeginForm("ManagePolicies", "Policy", FormMethod.Post))
 {
     @Html.DropDownListFor(m => m.categorySelected, Model.Categories, null, new { @onchange = "this.form.submit()", @class = "btn btn - default dropdown- toggle" })
+    @Html.ActionLink("Create New", "AddPolicy", "Policy", null, new { @class = "btn btn-primary" })
 }
+
+    
 
 @foreach (var p in Model.Policies)
 {
