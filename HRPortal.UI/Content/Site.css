@@ -104,3 +104,27 @@ p.heading {
 .homeimage {
     padding-left: 350px;
 }
+
+/* Styles for validation helpers*/
+field-validation-error {
+    color: #f00;
+    font-weight: bold;
+}
+
+.field-validation-valid{
+    display: none;
+}
+
+.input-validation-error{
+    border: 2px solid #f00;
+    background-color: #FBB;
+}
+
+.validation-summary-errors{
+    font-weight: bold;    
+    color: #f00;
+}
+
+.validation-summary-valid{
+        display: none;
+}
