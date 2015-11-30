@@ -33,10 +33,10 @@ namespace HRPortal.UI.Controllers
             return View("Index");
         }
 
-        public ActionResult AddEducation(Resume resume)
-        {
-            return View();
-        }
+        //public ActionResult AddEducation(Resume resume)
+        //{
+        //    return View();
+        //}
 
         public ActionResult ApplyForm()
         {

@@ -165,7 +165,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Start\App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HRPortal.Data\HRPortal.Data.csproj">
