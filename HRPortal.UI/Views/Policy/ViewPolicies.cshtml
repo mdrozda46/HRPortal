@@ -8,7 +8,7 @@
 
 @using (Html.BeginForm("ViewPolicies", "Policy", FormMethod.Post))
 {
-    @Html.DropDownListFor(m => m.categorySelected, Model.Categories, null, new { @onchange = "this.form.submit()", @class = "btn btn-default dropdown-toggle" })
+    @Html.DropDownListFor(m => m.categorySelected, Model.Categories, "--Select One--", new { @onchange = "this.form.submit()", @class = "btn btn-default dropdown-toggle" })
 
 }
 

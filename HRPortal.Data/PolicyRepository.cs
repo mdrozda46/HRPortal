@@ -62,7 +62,7 @@ namespace HRPortal.Data
 
         public List<Policy> GetAllPolicies()
         {
-            return _policies;
+           return _policies;
         }
 
         public List<string> GetAllCategories()
